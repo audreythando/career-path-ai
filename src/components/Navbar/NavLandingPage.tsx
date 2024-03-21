@@ -11,11 +11,10 @@ import {
   ListItemText,
   Toolbar,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-
 import { useTheme } from "@mui/material/styles";
 
 interface LinkProps {
@@ -25,8 +24,8 @@ interface LinkProps {
 
 const NavLandingPage: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -37,14 +36,11 @@ const NavLandingPage: React.FC = () => {
       <List>
         <ListItem button component="a" href="/signup">
           <ListItemIcon></ListItemIcon>
-
-          <ListItemText primary="Sign Up" />
+          <ListItemText primary="Sign Up" sx={{ color: "whitesmoke" }} />
         </ListItem>
-
         <ListItem button component="a" href="/login">
           <ListItemIcon></ListItemIcon>
-
-          <ListItemText primary="Login" />
+          <ListItemText primary="Login" sx={{ color: "whitesmoke" }} />
         </ListItem>
       </List>
     </Box>
@@ -57,14 +53,16 @@ const NavLandingPage: React.FC = () => {
         sx={{ backgroundColor: "#222831", width: "100%" }}
       >
         <Toolbar disableGutters>
-          <IconButton
-            size="large"
-            aria-label="open drawer"
-            color="inherit"
-            onClick={handleDrawerToggle}
-          >
-            <MenuIcon />
-          </IconButton>
+          {isMobile && (
+            <IconButton
+              size="large"
+              aria-label="open drawer"
+              color="inherit"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
           <Typography
             variant="h6"
             noWrap
@@ -81,16 +79,14 @@ const NavLandingPage: React.FC = () => {
         anchor="left"
         open={mobileOpen}
         onClose={handleDrawerToggle}
+        sx={{ "& .MuiDrawer-paper": { backgroundColor: "#222831" } }}
       >
-        <div>
-          <Toolbar sx={{ justifyContent: "flex-end" }}>
-            <IconButton onClick={handleDrawerToggle}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
-
-          {drawerContent}
-        </div>
+        <Toolbar sx={{ justifyContent: "flex-end" }}>
+          <IconButton onClick={handleDrawerToggle}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </Toolbar>
+        {drawerContent}
       </Drawer>
     </Box>
   );
