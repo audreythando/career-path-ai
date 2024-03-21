@@ -11,6 +11,7 @@ import {
   ListItemText,
   Toolbar,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -25,8 +26,8 @@ interface LinkProps {
 
 const NavLandingPage: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -38,13 +39,13 @@ const NavLandingPage: React.FC = () => {
         <ListItem button component="a" href="/signup">
           <ListItemIcon></ListItemIcon>
 
-          <ListItemText primary="Sign Up" />
+          <ListItemText primary="Sign Up" sx={{ color: "whitesmoke" }} />
         </ListItem>
 
         <ListItem button component="a" href="/login">
           <ListItemIcon></ListItemIcon>
 
-          <ListItemText primary="Login" />
+          <ListItemText primary="Login" sx={{ color: "whitesmoke" }} />
         </ListItem>
       </List>
     </Box>
@@ -81,6 +82,7 @@ const NavLandingPage: React.FC = () => {
         anchor="left"
         open={mobileOpen}
         onClose={handleDrawerToggle}
+        sx={{ "& .MuiDrawer-paper": { backgroundColor: "#222831" } }}
       >
         <div>
           <Toolbar sx={{ justifyContent: "flex-end" }}>
