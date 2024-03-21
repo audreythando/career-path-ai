@@ -34,7 +34,7 @@ const NavLandingPage: React.FC = () => {
   };
 
   const drawerContent = (
-    <Box sx={{ width: 250 }} role="presentation">
+    <Box sx={{ width: 250, backgroundColor: "#222831" }} role="presentation">
       <List>
         <ListItem button component="a" href="/signup">
           <ListItemIcon></ListItemIcon>
