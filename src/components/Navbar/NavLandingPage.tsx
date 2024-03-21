@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   AppBar,
   Box,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -14,15 +13,8 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-
 import { useTheme } from "@mui/material/styles";
-
-interface LinkProps {
-  to: string;
-  label: string;
-}
 
 const NavLandingPage: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,13 +30,10 @@ const NavLandingPage: React.FC = () => {
       <List>
         <ListItem button component="a" href="/signup">
           <ListItemIcon></ListItemIcon>
-
           <ListItemText primary="Sign Up" sx={{ color: "whitesmoke" }} />
         </ListItem>
-
         <ListItem button component="a" href="/login">
           <ListItemIcon></ListItemIcon>
-
           <ListItemText primary="Login" sx={{ color: "whitesmoke" }} />
         </ListItem>
       </List>
@@ -58,14 +47,16 @@ const NavLandingPage: React.FC = () => {
         sx={{ backgroundColor: "#222831", width: "100%" }}
       >
         <Toolbar disableGutters>
-          <IconButton
-            size="large"
-            aria-label="open drawer"
-            color="inherit"
-            onClick={handleDrawerToggle}
-          >
-            <MenuIcon />
-          </IconButton>
+          {isMobile && (
+            <IconButton
+              size="large"
+              aria-label="open drawer"
+              color="inherit"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
           <Typography
             variant="h6"
             noWrap
@@ -84,15 +75,12 @@ const NavLandingPage: React.FC = () => {
         onClose={handleDrawerToggle}
         sx={{ "& .MuiDrawer-paper": { backgroundColor: "#222831" } }}
       >
-        <div>
-          <Toolbar sx={{ justifyContent: "flex-end" }}>
-            <IconButton onClick={handleDrawerToggle}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
-
-          {drawerContent}
-        </div>
+        <Toolbar sx={{ justifyContent: "flex-end" }}>
+          <IconButton onClick={handleDrawerToggle}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </Toolbar>
+        {drawerContent}
       </Drawer>
     </Box>
   );
