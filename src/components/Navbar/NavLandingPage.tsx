@@ -11,6 +11,7 @@ import {
   ListItemText,
   Toolbar,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -25,8 +26,8 @@ interface LinkProps {
 
 const NavLandingPage: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
