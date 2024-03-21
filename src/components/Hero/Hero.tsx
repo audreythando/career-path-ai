@@ -1,40 +1,32 @@
 import React from "react";
-import {
-  Typography,
-  Container,
-  Stack,
-  Box,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import heroImage from "../../assets/hero.image.jpg";
+import { Typography, Container, Stack, Box, useTheme } from "@mui/material";
+import heroImage from "../../assets/lp.png";
 
 interface HeroSectionProps {}
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
         backgroundImage: `url(${heroImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundColor: "#222831",
         width: "100%",
-        minHeight: "300px",
+        height: "400px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: isSmallScreen ? theme.spacing(4) : theme.spacing(8),
+        [theme.breakpoints.down("sm")]: {
+          height: "300px", // Adjust height for smaller screens
+        },
       }}
     >
       <Container maxWidth="md">
-        <Stack spacing={isSmallScreen ? 1 : 2} alignItems="center">
-          <Typography
-            variant={isSmallScreen ? "h5" : "h4"}
-            gutterBottom
-            color="white"
-          >
+        <Stack spacing={2} alignItems="center">
+          <Typography variant="h4" gutterBottom color="white">
             "Empowering futures through personalized career matches."
           </Typography>
           <Typography variant="body1" color="white">
