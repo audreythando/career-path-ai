@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Container, Stack, Box } from "@mui/material";
-import heroImage from "../../assets/hero-image.jpg";
+import heroImage from "../../assets/hero.image.jpg";
 
 interface HeroSectionProps {}
 
