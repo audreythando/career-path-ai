@@ -82,6 +82,7 @@ const NavLandingPage: React.FC = () => {
         anchor="left"
         open={mobileOpen}
         onClose={handleDrawerToggle}
+        sx={{ "& .MuiDrawer-paper": { backgroundColor: "#222831" } }}
       >
         <div>
           <Toolbar sx={{ justifyContent: "flex-end" }}>
