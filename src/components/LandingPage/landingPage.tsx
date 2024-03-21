@@ -77,7 +77,7 @@ const LandingPage: React.FC = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: "100px", // Adjust this value as needed
+        paddingTop: "100px",
       }}
     >
       <Grid container spacing={2}>
