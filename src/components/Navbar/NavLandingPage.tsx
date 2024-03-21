@@ -39,13 +39,13 @@ const NavLandingPage: React.FC = () => {
         <ListItem button component="a" href="/signup">
           <ListItemIcon></ListItemIcon>
 
-          <ListItemText primary="Sign Up" />
+          <ListItemText primary="Sign Up" sx={{ color: "whitesmoke" }} />
         </ListItem>
 
         <ListItem button component="a" href="/login">
           <ListItemIcon></ListItemIcon>
 
-          <ListItemText primary="Login" />
+          <ListItemText primary="Login" sx={{ color: "whitesmoke" }} />
         </ListItem>
       </List>
     </Box>
