@@ -40,13 +40,13 @@ const NavLandingPage: React.FC = () => {
         <ListItem button component="a" href="/signup">
           <ListItemIcon></ListItemIcon>
 
-          <ListItemText primary="Sign Up" />
+          <ListItemText primary="Sign Up" sx={{ color: "whitesmoke" }} />
         </ListItem>
 
         <ListItem button component="a" href="/login">
           <ListItemIcon></ListItemIcon>
 
-          <ListItemText primary="Login" />
+          <ListItemText primary="Login" sx={{ color: "whitesmoke" }} />
         </ListItem>
       </List>
     </Box>
@@ -83,7 +83,7 @@ const NavLandingPage: React.FC = () => {
         anchor="left"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        sx={{ backgroundColor: "#222831" }}
+        sx={{ "& .MuiDrawer-paper": { backgroundColor: "#222831" } }}
       >
         <div>
           <Toolbar sx={{ justifyContent: "flex-end" }}>
