@@ -24,8 +24,15 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             "Empowering futures through personalized career matches."
           </Typography>
           <Typography variant="body1" color="white">
-            Our AI analyzes your interests and skills to recommend the perfect
-            career path for you.
+            "Embark on a journey of self-discovery and professional fulfillment
+            with our AI-powered career matchmaking platform. Say goodbye to
+            uncertainty and hello to confidence as our hero AI algorithm works
+            tirelessly to uncover your true passions, skills, and aspirations.
+            Whether you're a recent graduate stepping into the workforce or a
+            seasoned professional seeking a new direction, our platform is your
+            beacon of light in the maze of career options. Let us guide you to a
+            future where your potential meets purpose, one personalized career
+            path at a time. Your success story starts here."
           </Typography>
         </Stack>
       </Container>
