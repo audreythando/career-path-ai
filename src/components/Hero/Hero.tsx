@@ -21,7 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
       <Container maxWidth="md">
         <Stack spacing={2} alignItems="center">
           <Typography variant="h4" gutterBottom color="white">
-            Discover Your Dream Career Path with AI
+            "Empowering futures through personalized career matches."
           </Typography>
           <Typography variant="body1" color="white">
             Our AI analyzes your interests and skills to recommend the perfect
