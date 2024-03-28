@@ -20,7 +20,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
         alignItems: "center",
         justifyContent: "center",
         [theme.breakpoints.down("sm")]: {
-          height: "300px", // Adjust height for smaller screens
+          height: "300px",
         },
       }}
     >

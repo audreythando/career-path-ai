@@ -18,55 +18,14 @@ import {
   ListItemText,
   Divider,
   Box,
+  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { useTheme } from "@mui/material/styles";
 import Hero from "../../assets/lp.png";
 
-interface LinkProps {
-  to: string;
-  label: string;
-}
-
-const links: LinkProps[] = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact" },
-];
-
 const LandingPage: React.FC = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   const theme = useTheme();
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
-  const drawerContent = (
-    <Box sx={{ width: 250 }} role="presentation">
-      <List>
-        {links.map((link) => (
-          <ListItem key={link.label} button component="a" href={link.to}>
-            <ListItemIcon></ListItemIcon>
-            <ListItemText primary={link.label} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        <ListItem button component="a" href="/signup">
-          <ListItemIcon></ListItemIcon>
-          <ListItemText primary="Sign Up" />
-        </ListItem>
-        <ListItem button component="a" href="/login">
-          <ListItemIcon></ListItemIcon>
-          <ListItemText primary="Login" />
-        </ListItem>
-      </List>
-    </Box>
-  );
 
   return (
     <Container
@@ -90,7 +49,7 @@ const LandingPage: React.FC = () => {
               variant="h4"
               gutterBottom
               color="whitesmoke"
-              style={{ marginTop: "300px" }}
+              sx={{ marginTop: { xs: 0, md: "300px" } }}
             >
               Discover hidden career paths you might not have considered.
             </Typography>
@@ -101,13 +60,13 @@ const LandingPage: React.FC = () => {
               exploration journey.
             </Typography>
             <Box sx={{ textAlign: "center" }}>
-              <Button
+              {/* <Button
                 variant="contained"
                 color="primary"
                 sx={{ marginRight: 2 }}
               >
                 Sign Up Now
-              </Button>
+              </Button> */}
               <Button
                 variant="contained"
                 color="primary"

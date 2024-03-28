@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavLandingPage />
       <LandingPage />
-      <HeroSection />
+      {/* <HeroSection /> */}
     </div>
   );
 }
